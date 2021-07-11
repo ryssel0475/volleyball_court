@@ -1,0 +1,94 @@
+
+/* 畫面鎖定 */
+html.noscroll {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+html.fixWindow {
+    position: fixed;
+}
+
+#app{
+    margin:50px auto;
+    width:60vw;
+ }
+ #app img{
+     width: 100%;
+ }
+ #court{
+     position: relative;
+ }
+ .playerLeft
+ {
+     position:absolute;
+     text-align: center;
+     font-size: 2vw;
+     width: 4vw;
+     height: 4vw;
+     border-radius: 50%;
+     border: solid; 
+     background-color: pink;
+     /* display: inline-block; */
+     /* display: flex;
+     justify-content: center;
+     align-items: center; */
+ } 
+
+ .playerRight
+ {
+     position:absolute;
+     text-align: center;
+     font-size: 2vw;
+     width: 4vw;
+     height: 4vw;
+     border-radius: 50%;
+     border: solid; 
+     background-color: rgb(201, 192, 255);
+     /* display: inline-block; */
+     /* display: flex;
+     justify-content: center;
+     align-items: center; */
+ } 
+
+ .number
+ {   
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     white-space: nowrap;
+     transform:translate(-50%, -50%);
+     /* position:absolute;
+     top:50%; */
+     /* text-align: center;
+     line-height: 5vw; */
+ }
+
+
+button
+{
+
+    background-color:none;
+	outline:none;
+	background-color:#888;
+	padding:1vw 1vw;
+	font-size:1vw;
+	color:#ddd;
+	cursor: pointer;
+    /* margin: 0 7.5vw 0 0; */
+    justify-content:space-evenly;
+}
+
+button:hover
+{
+    background-color: #111;;
+}
+
+#resetBtn{
+    border:solid;
+	outline:none;
+	background-color:whitesmoke;
+	padding:1vw 1vw;
+	font-size:1vw;
+	color:rgb(39, 39, 39);
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Volleyball Court</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/Reset.css">
+    <!-- 移動選手 -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"> 
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <div id="court">
+            <div>
+                <img src="image/volleyball court.jpg" id="img">     
+            </div>
+            <!-- 左側 -->
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">1號</p>
+            </span>
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">2號</p>
+            </span>
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">3號</p>
+            </span>
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">4號</p>
+            </span>
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">5號</p>
+            </span>
+            <span class="playerLeft">
+                <p class="number" ondblclick="ShowElement(this)">6號</p>
+            </span>
+
+            <!-- 右側 -->
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">1號</p>
+            </span>
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">2號</p>
+            </span>
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">3號</p>
+            </span>
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">4號</p>
+            </span>
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">5號</p>
+            </span>
+            <span class="playerRight">
+                <p class="number" ondblclick="ShowElement(this)">6號</p>
+            </span>
+
+            <span style="display: flex; justify-content: space-between;">
+                <button id="prevBtnLeft">Prev</button>
+                <button id="nextBtnLeft">Next</button>
+                <button onclick="resetLeft()" id="resetBtn">Reset</button>
+                
+                <button id="prevBtnRight">Prev</button>
+                <button id="nextBtnRight">Next</button>
+            </span>
+        </div>
+        
+    </div>
+    
+
+    <script>
+        function resetLeft() {
+            setPosLeft(posAryLeft);
+            setPosRight(posAryRight);
+            changeAryLeft = posAryLeft.map(x => x);
+            changeAryRight = posAryRight.map(x => x);
+        }
+
+        function ShowElement(element){
+            var oldhtml = element.innerHTML;
+            var newobj = document.createElement('input');
+            //建立新的input元素
+            newobj.type = 'type';
+            //為新增元素新增型別
+            newobj.onblur = function(){
+            element.innerHTML = this.value ? this.value : oldhtml;
+            //當觸發時判斷新增元素值是否為空，為空則不修改，並返回原有值 
+            }
+            element.innerHTML = '';
+            element.appendChild(newobj);
+            newobj.focus();
+        }
+
+
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/right.js"></script>
+    
+      
+</body>
+</html>
